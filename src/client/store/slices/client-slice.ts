@@ -1,17 +1,16 @@
-import { generateRandomWord } from '@/lib/utils/generate-random-word';
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
 interface ClientState {
 	hangman: {
-		word: string;
-		gussedLetters: string[];
+		word: string[] | null;
+		guessedLetters: string[];
 	};
 }
 
 const initialState: ClientState = {
 	hangman: {
-		word: generateRandomWord(),
-		gussedLetters: [],
+		word: null,
+		guessedLetters: [],
 	},
 };
 
@@ -19,7 +18,7 @@ const slice = createSlice({
 	name: 'client',
 	initialState,
 	reducers: {
-		setplaces: (state, action: PayloadAction<Partial<ClientState['hangman']>>) => {
+		sethangman: (state, action: PayloadAction<Partial<ClientState['hangman']>>) => {
 			state.hangman = {
 				...state.hangman,
 				...action.payload,
@@ -28,5 +27,5 @@ const slice = createSlice({
 	},
 });
 
-export const { setplaces } = slice.actions;
+export const { sethangman } = slice.actions;
 export default slice.reducer;
