@@ -45,7 +45,6 @@ export function HangmanDrawing() {
 
 	// To set the letters from the input keyboard
 	useEffect(() => {
-		console.log('useEffect ran');
 		const handler = (e: KeyboardEvent) => {
 			const key = e.key;
 			if (!key.match(/^[a-z]$/)) return;
