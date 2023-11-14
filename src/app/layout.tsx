@@ -7,7 +7,7 @@ import '../styles/main.scss';
 const inter = Inter({ subsets: ['latin'], weight: ['400', '600'] });
 
 export const metadata: Metadata = {
-	title: 'Hungman',
+	title: 'Hungman 👻',
 	description: 'A funny next.js project to guess the word',
 };
 
